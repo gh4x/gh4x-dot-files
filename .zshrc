@@ -102,4 +102,10 @@ echo "install brew reqs"
 xargs brew install < .brew_requirements
 echo "brew doctor" && brew doctor
 
+# fix for chuck norris
+[ ! -f ~/.oh-my-zsh/plugins/chucknorris/fortunes.dat ] && strfile ~/.oh-my-zsh/plugins/chucknorris/fortunes
+clear
+echo "--------------------------------------------------------"
+echo $(chuck)
+echo "--------------------------------------------------------"
 
