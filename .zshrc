@@ -96,3 +96,10 @@ DEFAULT_USER=saundersg
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+echo "Brew update" && brew update
+echo "install brew reqs" 
+xargs brew install < .brew_requirements
+echo "brew doctor" && brew doctor
+
+
