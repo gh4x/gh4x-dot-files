@@ -62,6 +62,7 @@ plugins=(
   git
   zsh-autosuggestions
   alias-tips
+  chucknorris
 )
 
 source $ZSH/oh-my-zsh.sh
