@@ -106,6 +106,7 @@ echo "brew doctor" && brew doctor
 [ ! -f ~/.oh-my-zsh/plugins/chucknorris/fortunes.dat ] && strfile ~/.oh-my-zsh/plugins/chucknorris/fortunes
 clear
 echo "--------------------------------------------------------"
+echo $(fortune)
+echo "--------------------------------------------------------"
 echo $(chuck)
 echo "--------------------------------------------------------"
-
