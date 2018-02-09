@@ -174,6 +174,7 @@ alias gke='\gitk --all $(git log -g --pretty=%h)'
 compdef _git gke='gitk'
 
 alias gl='git pull'
+alias glu='git pull upstream'
 alias glg='git log --stat'
 alias glgp='git log --stat -p'
 alias glgg='git log --graph'
