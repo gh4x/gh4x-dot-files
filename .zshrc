@@ -102,6 +102,10 @@ echo "install brew reqs"
 xargs brew install < .brew_requirements
 echo "brew doctor" && brew doctor
 
+# Pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
 # fix for chuck norris
 [ ! -f ~/.oh-my-zsh/plugins/chucknorris/fortunes.dat ] && strfile ~/.oh-my-zsh/plugins/chucknorris/fortunes
 clear
