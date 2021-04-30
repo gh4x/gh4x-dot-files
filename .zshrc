@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/saundersg/.oh-my-zsh
+export ZSH=/Users/$(whoami)/.oh-my-zsh
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -68,7 +68,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-DEFAULT_USER=saundersg
+DEFAULT_USER=$(whoami)
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -97,20 +97,30 @@ DEFAULT_USER=saundersg
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-echo "Brew update" && brew update
-echo "install brew reqs" 
-xargs brew install < .brew_requirements
-echo "brew doctor" && brew doctor
+#echo "Brew update" && brew update
+# echo "install brew reqs" 
+# xargs brew install < .brew_requirements
+#echo "brew doctor" && brew doctor
 
 # Pyenv
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+#Perforce:
+p4 set P4PORT=gdchelix01:5050
+p4 set P4USER=gsaunders
+
 # fix for chuck norris
-[ ! -f ~/.oh-my-zsh/plugins/chucknorris/fortunes.dat ] && strfile ~/.oh-my-zsh/plugins/chucknorris/fortunes
+#[ ! -f ~/.oh-my-zsh/plugins/chucknorris/fortunes.dat ] && strfile ~/.oh-my-zsh/plugins/chucknorris/fortunes
 clear
-echo "--------------------------------------------------------"
-echo $(fortune)
-echo "--------------------------------------------------------"
+echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 echo $(chuck)
-echo "--------------------------------------------------------"
+echo "--------------------------------------------------------------------------------------------------------------------------------------------------------------------------" 
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# aliases
+alias k=kubectl
+
+# homebrew setting
+export PATH="/usr/local/sbin:$PATH"
